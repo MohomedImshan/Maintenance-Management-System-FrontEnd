@@ -1,9 +1,15 @@
 import React from 'react'
+import Header from '../index/header'
+
 
 function EngineerDashboard() {
   return (
     <div>
-      <h1>Enginer dashboard</h1>
+      <div>
+        <Header />
+        <h1>Engineer</h1>
+      </div>
+      
     </div>
   )
 }

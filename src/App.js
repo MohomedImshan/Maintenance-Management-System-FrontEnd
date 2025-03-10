@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import AdminDashboard from './Position/AdminDashboard'
 import EngineerDashboard from './Position/EngineerDashboard'
 import TechnicianDashboard from './Position/TechnicianDashboard'
+import AssistantEngineerDashBoard from './Position/AssistantEngineerDashBoard';
 
 
 
@@ -59,6 +60,10 @@ function App() {
 
         {usePosition === 'Technician' &&(
           <Route path='/Technician' element={<TechnicianDashboard onLogout={handleLogout} />} />
+        )}
+
+        {usePosition === 'Assistant_Engineer' &&(
+                  <Route path='/Assistant_Engineer' element={<AssistantEngineerDashBoard onLogout={handleLogout} />} />
         )}
 
         {/* <Route path='*' element={<Navigate to="/" />} /> */}

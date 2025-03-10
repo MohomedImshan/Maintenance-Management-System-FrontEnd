@@ -35,9 +35,25 @@ function Header() {
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
-            <li className="nav-item active">
-                <Link className="nav-link" to="/Home">Home </Link>
+
+
+            {(userPosition === 'Engineer')&&(
+                <li className="nav-item active">
+                <Link className="nav-link" to="/Engineer">Home </Link>
             </li>
+            )}
+            {(userPosition === 'Technician')&&(
+                <li className="nav-item active">
+                <Link className="nav-link" to="/Technician">Home </Link>
+            </li>
+            )}
+            {(userPosition === 'Assistant_Engineer')&&(
+                <li className="nav-item active">
+                <Link className="nav-link" to="/Assistant_Engineer">Home </Link>
+            </li>
+            )}
+
+            
             <li className="nav-item">
                 <Link className="nav-link " to="/User">Users</Link>
             </li>

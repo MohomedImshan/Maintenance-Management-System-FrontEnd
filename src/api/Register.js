@@ -66,7 +66,7 @@ function Register() {
                     <select className="form-select" name='position' onChange={handleInput} aria-label="Default select example">
                         <option>Open this select menu</option>
                         <option value="Engineer">Engineer</option>
-                        <option value="Assistant Engineer">Assistant Engineer</option>
+                        <option value="Assistant_Engineer">Assistant Engineer</option>
                         <option value="Technician">Technician</option>
                     </select>
                 </div>
