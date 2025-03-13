@@ -12,7 +12,7 @@ function Notifications() {
     const fetchAllItems = async()=>{
       try{
         const res = await axios.get("http://localhost:8800/Notifications")
-        setItems(res.data.Items ||[])
+        setItems(res.data.Items || [])
       }catch(err){
         console.log(err)
       }
