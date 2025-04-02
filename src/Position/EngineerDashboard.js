@@ -9,6 +9,9 @@ function EngineerDashboard() {
 
 
   const [works,setWorks] = useState([])
+  const [showModal,setShowModal] = useState(false)
+  const [newWork,setNewWork]=useState('')
+
 
   useEffect(()=>{
     const fetchAllIWorks = async()=>{
@@ -23,7 +26,11 @@ function EngineerDashboard() {
   },[])
 
   const handleAccept = () =>{
-    if()
+    if(newWork.trim()){
+      setWorks([...works,newWork])
+      setNewWork('')
+      setShowModal(false)
+    }
   }
   
   return (
@@ -55,8 +62,8 @@ function EngineerDashboard() {
                             <td>{work.department}</td>
                             <td>{work.machine_code}</td>
                             <td>
-                              <button className='btn btn-success' onClick={()=>setShwoModal(true)}>Edit</button>
-                            <Modal show={showModal} onHide={()=>setShwoModal(false)}>
+                              <button className='btn btn-success' onClick={()=>setShowModal(true)}>Edit</button>
+                            <Modal show={showModal} onHide={()=>setShowModal(false)}>
                               <Modal.Header>
                                 <Modal.Title>Edit Request</Modal.Title>
                               </Modal.Header>
@@ -70,7 +77,7 @@ function EngineerDashboard() {
                                 </Form.Group>
                               </Modal.Body>
                               <Modal.Footer>
-                                <Button variant='secondary' onClick={()=>setShwoModal(false)}>Cancle</Button>
+                                <Button variant='secondary' onClick={()=>setShowModal(false)}>Cancle</Button>
                                 <Button variant='success' onClick={handleAccept}>Accept</Button>
                               </Modal.Footer>
 

@@ -7,20 +7,27 @@ import './fr.css'
 function Header() {
 
     const [userPosition,setUserPosition] = useState(null)
+    const [userId,setUserId] = useState(null)
     const navigate = useNavigate()
 
 
     useEffect(()=>{
         const storedUser = localStorage.getItem('position')
+        const userid = localStorage.getItem('user_id')
+
         if(storedUser){
             setUserPosition(storedUser)
             
             
         }
+        if(userid){
+            setUserId(userid)
+        }
     },[])
     
     const handleLogout =()=>{
         localStorage.removeItem('position')
+        localStorage.removeItem('user_id')
         navigate('/')
     }
 
@@ -67,7 +74,7 @@ function Header() {
                 <Link className="nav-link" to="/Notifications">Notification</Link>
             </li>)}
             <li className="nav-item">
-                <Link className="nav-link " to="/Requests">Requests</Link>
+                <Link className="nav-link " to={`/Requests/${userId}`} >Requests</Link>
             </li>
             <li>
                 <form className="form-inline my-2 my-lg-0 justify-item-right ">

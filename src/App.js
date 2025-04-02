@@ -45,10 +45,11 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/User" element={<User />} />
           <Route path="/Spareparts" element={<Spareparts />} />
-          <Route path="/Requests" element={<Requests />} />
+          <Route path="/Requests/:user_id" element={<Requests />} />
           <Route path="/Notifications" element={<Notifications />} />
           <Route path="/register" element={<Register />} />
           <Route path='/Update/:user_id' element={<Update />} />
+          
 
         {usePosition === 'admin' &&(
           <Route path='/Admin' element={<AdminDashboard onLogout={handleLogout} />} />
