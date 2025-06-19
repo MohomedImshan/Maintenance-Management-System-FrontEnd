@@ -4,9 +4,7 @@ import Header from '../index/header'
 import { Link } from 'react-router-dom'
 
 function Notifications() {
-
-
-    const [Items,setItems] = useState([])
+  const [Items,setItems] = useState([])
 
   useEffect(()=>{
     const fetchAllItems = async()=>{
